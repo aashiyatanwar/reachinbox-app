@@ -47,5 +47,5 @@ This project is a web application built using React.js and Tailwind CSS. It incl
    npm install
 
 4. Run project:
-   '''bash
+   ```bash
    npm start
