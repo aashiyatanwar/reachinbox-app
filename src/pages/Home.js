@@ -52,6 +52,16 @@ const Home = () => {
       .catch((error) => console.error("Error:", error));
   };
 
+  function safeParse(item) {
+    try {
+      const value = localStorage.getItem(item);
+      return value ? JSON.parse(value) : null;
+    } catch (e) {
+      console.error("Error parsing JSON from localStorage:", e);
+      return null;
+    }
+  }
+
   useEffect(() => {
     token = location.search.split("?token=")?.join("");
     if (token) {
@@ -120,14 +130,14 @@ const Home = () => {
       .catch((err) => alert("Error Please try again"));
   };
 
-  let firstName = localStorage.getItem("reachinbox-auth-firstname");
-  firstName = firstName ? JSON.parse(firstName) : "";
-  let lastName = localStorage.getItem("reachinbox-auth-lastname");
-  lastName = lastName ? JSON.parse(lastName) : "";
+  let firstName = safeParse("reachinbox-auth-firstname");
+  let lastName = safeParse("reachinbox-auth-lastname");
 
   const username = firstName
     ? firstName[0] + (lastName ? lastName[0] : "")
     : "";
+
+  
 
   return (
     <div
@@ -222,21 +232,21 @@ const Home = () => {
       </div>
       <div>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <div className="w-[440px] h-[240px] text-white">
+          <div className="w-[300px] text-white">
             <div className="h-full">
-              <h1 className="text-[24px] font-bold mt-8">Are you Sure?</h1>
-              <p className="mt-8 text-[#E8E8E8]">
+              <h1 className="text-[24px] font-bold mt-4">Are you Sure?</h1>
+              <p className="mt-4 text-[#E8E8E8]">
                 Your selected email will be deleted.
               </p>
-              <div className="mt-8 flex justify-center gap-5">
+              <div className="mt-6 flex justify-between gap-5">
                 <button
-                  className="w-[120px] h-12 bg-[#25262B]"
+                  className="w-full py-2 bg-[#25262B] rounded-md hover:bg-[#333]"
                   onClick={closeModal}
                 >
                   Cancel
                 </button>
                 <button
-                  className="w-[140px] h-12 bg-[#FA5252]"
+                  className="w-full py-2 bg-[#FA5252] rounded-md hover:bg-[#ff6a6a]"
                   onClick={deleteEmail}
                 >
                   Delete
