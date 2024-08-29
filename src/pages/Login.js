@@ -30,8 +30,14 @@ const Login = () => {
                                 className='bg-black rounded-full h-5 mt-0.5' 
                             />
                             
-                             <Link 
+                             {/* <Link 
                                 to="https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:3000/home" 
+                                className='text-sm text-gray-400 cursor-pointer'
+                            >
+                                Sign Up with Google
+                            </Link> */}
+                            <Link 
+                                to="https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-app.onrender.com/home" 
                                 className='text-sm text-gray-400 cursor-pointer'
                             >
                                 Sign Up with Google
