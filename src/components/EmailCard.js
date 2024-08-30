@@ -14,12 +14,12 @@ const EmailCard = ({ currColor, threadId, id, fromEmail, subject, handleChangeEm
           className={`w-65px h-4 p-2 pr-1 flex justify-around items-center border border-gray-700 rounded-lg ${currColor ? 'bg-[#25262B]' : 'bg-[#e1e7ee]'}`}
         >
           <p className='w-2 h-2 rounded-3xl bg-green-600 mt-0.5'></p>
-          <p className={`${currColor ? 'text-green-400' : 'text-blue-700'}`}>Interested</p>
+          <p className={`${currColor ? 'text-green-400' : 'text-blue-700'} m-2`}>Interested</p>
         </div>
         <div
           className={`w-112px h-4 p-1 gap-1 flex items-center border border-gray-700 rounded-lg ${currColor ? 'bg-[#25262B]' : 'bg-[#e1e7ee]'}`}
         >
-          <Send color={currColor ? 'white' : 'black'} className='h-2 mt-1 w-2 ml-1' />
+          <Send color={currColor ? 'white' : 'black'} className='h-2 m-1 w-2 ml' />
           <p>Campaign Name</p>
         </div>
       </div>
