@@ -13,7 +13,7 @@ const EmailCard = ({ currColor, threadId, id, fromEmail, subject, handleChangeEm
         <div
           className={`w-65px h-4 pr-1 flex justify-around items-center border border-gray-700 rounded-lg ${currColor ? 'bg-[#25262B]' : 'bg-[#e1e7ee]'}`}
         >
-          <p className='w-2 h-2 rounded-3xl bg-green-600 mt-0.5'></p>
+          <p className='w-2 h-2 rounded-3xl bg-green-600 mt-0.5 p-2'></p>
           <p className={`${currColor ? 'text-green-400' : 'text-blue-700'}`}>Interested</p>
         </div>
         <div
